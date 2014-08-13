@@ -22,7 +22,19 @@ class TicketsController < ApplicationController
   def show
     
   end
-  
+  def edit
+    
+  end
+  def update
+    if @ticket.upda(e dit_project_ticket_path);
+      redirect_to [@project,@tickt]
+      flash[:notice]="Ticket has been upated."
+    else
+      flahs[:alert]; 
+       render "edit"
+       
+    end
+  end
   private
   
   def set_project
@@ -31,7 +43,7 @@ class TicketsController < ApplicationController
   def set_ticket
     @ticket=@project.tickets.find(params[:id])
   end
-  def ticket_params
+  def<
     params.require(:ticket).permit(:title,:description)
   end
 end
