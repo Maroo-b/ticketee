@@ -26,11 +26,11 @@ class TicketsController < ApplicationController
     
   end
   def update
-    if @ticket.upda(e dit_project_ticket_path);
-      redirect_to [@project,@tickt]
-      flash[:notice]="Ticket has been upated."
+    if @ticket.update(ticket_params);
+      redirect_to [@project,@ticket]
+      flash[:notice]="Ticket has been updated."
     else
-      flahs[:alert]; 
+      flash[:alert]="Ticket has not been updated."; 
        render "edit"
        
     end
@@ -49,7 +49,7 @@ redirect_to @project
   def set_ticket
     @ticket=@project.tickets.find(params[:id])
   end
-  def<
+  def  ticket_params
     params.require(:ticket).permit(:title,:description)
   end
 end
