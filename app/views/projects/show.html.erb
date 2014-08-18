@@ -1,7 +1,10 @@
 <% title(@project.name, "Projects") %>
-
+<% admins_only do %>
 <%= link_to "Edit Project",edit_project_path(@project)%><br />
+<%end%>
+<% admins_only do %>
 <%= link_to "Delete Project",project_path(@project),method: :delete, data: { confirm: "are u sure?"}%>
+<%end%>
 <h2><%= @project.name %></h2>
 <%= link_to "New Ticket",new_project_ticket_path(@project) %>
 
