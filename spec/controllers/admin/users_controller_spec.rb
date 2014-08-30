@@ -10,4 +10,6 @@ describe Admin::UsersController do
     expect(flash[:alert]).to eql("You must be an admin to do that.")
   end
   end
+  
+
 end
