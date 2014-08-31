@@ -9,6 +9,8 @@ ticket
 end
 
   before do
+    define_permission!(user, "view", project)
+
     sign_in_as!(user)
 
     visit '/'

@@ -6,6 +6,8 @@ let!(:ticket) {
 FactoryGirl.create(:ticket, project: project, user: user) }
 
 before do
+  define_permission!(user, "view", project)
+
   sign_in_as!(user)
 
   visit '/'

@@ -19,13 +19,13 @@ Ticketee
 <%= value %>
 </div>
 <% end %>
-
-<%= yield %>
 <% if current_user %>
 Signed in as <%= current_user.email %>
 <% admins_only do %>
 <%= link_to "Admin", admin_root_path %>
 <% end %>
 <%end%>
+<%= yield %>
+
 </body>
 </html>
